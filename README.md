@@ -10,4 +10,57 @@ The game gives the players two starting words of the same length (gain and fire 
 + wire
 + **fire**
 
-[More about this Project Here] (https://cswithandroid.withgoogle.com/content/unit?unit=39&lesson=41)
+## Implementation
+
+Used an adjacency list with linked-list to store words from dictionary where the root is the word and nodes are valid words that can be made from the root. 
+
+```  java       
+for(int i = 0; i < wordList.size(); i++){
+            // add into path
+            String input = wordList.get(i);
+
+            LinkedList<String> neighbours = neighbours(input);
+            adjDictionary.add(new LinkedList<String>());
+            adjDictionary.get(i).add(input); // adds root node
+
+            String display = "";
+            for(int j = 0; j < neighbours.size(); j++){
+                adjDictionary.get(i).add(neighbours.get(j)); // adds neighbors to the root node
+
+                display += " " + neighbours.get(j);
+            }
+        }
+```
+
+Using a hashmap implementation to store words of only needed lengths
+
+``` java
+    private LinkedList<String> neighbours(String word) {
+        int size = word.length();
+        LinkedList<String> neighbours = new LinkedList<>();
+        ArrayList<String> possibleNeighbours  = wordLengths.get(size);
+
+        for(String validWord: possibleNeighbours){
+            int count = 0;
+
+            // the root
+            if(validWord.equals(word)) continue;
+
+            for(int i = 0; i < size; i++){
+                if(!validWord.contains("" + word.charAt(i))){
+                    count++;
+                }
+            }
+
+            if(!(count > 1)) neighbours.add(validWord);
+        }
+        return neighbours;
+    }
+```
+
+
+![More about this Project Here][link]
+
+[link]: (https://cswithandroid.withgoogle.com/content/unit?unit=39&lesson=41)
+
+
