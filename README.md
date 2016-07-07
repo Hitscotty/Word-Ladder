@@ -32,7 +32,7 @@ for(int i = 0; i < wordList.size(); i++){
         }
 ```
 
-Using a hashmap implementation to store words of only needed lengths
+Using a hashmap (wordLengths)to store words of only needed lengths
 
 ``` java
     private LinkedList<String> neighbours(String word) {
