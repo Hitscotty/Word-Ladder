@@ -59,8 +59,8 @@ Using a hashmap implementation to store words of only needed lengths
 ```
 
 
-![More about this Project Here][link]
+[More about this Project Here][link]
 
-[link]: (https://cswithandroid.withgoogle.com/content/unit?unit=39&lesson=41)
+[link]:(https://cswithandroid.withgoogle.com/content/unit?unit=39&lesson=41)
 
 
