@@ -30,7 +30,7 @@ public class WordSelectionActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         AssetManager assetManager = getAssets();
         try {
-            InputStream inputStream = assetManager.open("words.txt");
+            InputStream inputStream = assetManager.open("sample.txt");
             dictionary = new PathDictionary(inputStream);
         } catch (IOException e) {
             Toast toast = Toast.makeText(this, "Could not load dictionary", Toast.LENGTH_LONG);
@@ -40,10 +40,11 @@ public class WordSelectionActivity extends AppCompatActivity {
 
     public boolean onStart(View view) {
         TextView startWordView = (TextView) findViewById(R.id.startWord);
-        TextView endWordView = (TextView) findViewById(R.id.endWord);
-        String[] words = dictionary.findPath(
+        TextView endWordView   = (TextView) findViewById(R.id.endWord);
+        String[] words         = dictionary.findPath(
                 startWordView.getText().toString().toLowerCase(),
                 endWordView.getText().toString().toLowerCase());
+
         if (words != null) {
             // TODO: Launch new activity here
             // make new activity that displays the words in a line
@@ -56,6 +57,7 @@ public class WordSelectionActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT);
             toast.show();
         }
+
         return true;
     }
 
