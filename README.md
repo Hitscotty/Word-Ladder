@@ -2,7 +2,7 @@
 
 <link href="/modules/core_tags/_static/css/markdown.css" rel="stylesheet"></link>
 
-This workshop’s app will be a game called [Word Ladder]. This game was invented by Lewis Carroll (the author of Alice in Wonderland) and appears in some newspapers along with the crossword puzzles. It looks like this:
+This workshop’s app is a game called [Word Ladder]. This game was invented by Lewis Carroll (the author of Alice in Wonderland) and appears in some newspapers along with the crossword puzzles. It looks like this:
 
 <center>
 ![Screenshot]
